@@ -651,35 +651,44 @@ body {
 }
 
 /* Hero Image */
+/* HARD RESET for this component only */
+.hero-image,
+.product-placeholder,
+.bottle-mockup {
+  padding: 0;
+  margin: 0;
+}
+
+/* layout */
 .hero-image {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .product-placeholder {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+/* image wrapper */
 .bottle-mockup {
   width: 280px;
-  height: 400px;
-  background: linear-gradient(
-    135deg,
-    var(--primary-teal),
-    var(--primary-teal-dark)
-  );
-  border-radius: var(--radius-xl);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--white);
-  font-size: 1.8rem;
-  font-weight: 700;
-  box-shadow: var(--shadow-lg);
-  margin: 0 auto var(--spacing-md);
-  position: relative;
-  overflow: hidden;
+}
+
+/* image */
+.bottle-mockup img {
+  display: block; /* removes inline gaps */
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+/* caption */
+.image-caption {
+  margin: 8px 0 0;
+  padding: 0;
 }
 
 .bottle-mockup::before {
@@ -707,12 +716,6 @@ body {
   }
 }
 
-.image-caption {
-  font-size: 1rem;
-  color: var(--primary-teal);
-  font-weight: 600;
-}
-
 /* Responsive Hero */
 @media (max-width: 968px) {
   .hero-content {
@@ -730,11 +733,6 @@ body {
 
   .hero-cta {
     justify-content: center;
-  }
-
-  .bottle-mockup {
-    width: 220px;
-    height: 320px;
   }
 }
 
@@ -1168,11 +1166,12 @@ body {
 
 .whatsapp-placeholder {
   background: var(--white);
-  border: 3px dashed var(--primary-teal);
+  border: 3px solid var(--primary-teal);
   border-radius: var(--radius-lg);
-  padding: var(--spacing-xl);
+  /* padding: var(--spacing-xl); */
   text-align: center;
   min-height: 280px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1665,16 +1664,16 @@ body {
 }
 
 .whatsapp-icon svg {
-    display: block;
-    width: 28px;
-    height: 28px;
+  display: block;
+  width: 28px;
+  height: 28px;
 }
 
 @media (max-width: 768px) {
-    .whatsapp-icon svg {
-        width: 32px;
-        height: 32px;
-    }
+  .whatsapp-icon svg {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 /* ============================================
@@ -1738,6 +1737,7 @@ body {
   opacity: 0.7;
   margin-bottom: var(--spacing-md);
   line-height: 1.6;
+  color: var(--text-dark);
 }
 
 .copyright {
