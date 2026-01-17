@@ -105,14 +105,33 @@ document.addEventListener('DOMContentLoaded', function () {
     let modalShown = false;
 
     // Function to show modal
-    function showModal() {
-        if (!modalShown) {
+    function showModal(force = false) {
+        if (!modalShown || force) {
             discountModal.classList.add('active');
             modalShown = true;
-            // Prevent body scroll when modal is open
             document.body.style.overflow = 'hidden';
         }
     }
+
+
+    const discountBtn = document.getElementById('openDiscountModal');
+
+    if (discountBtn) {
+        discountBtn.addEventListener('click', function () {
+            showModal(true);
+        });
+    }
+
+    const discountToast = document.getElementById('discountToast');
+
+    setTimeout(() => {
+        discountToast.style.display = 'block';
+
+        setTimeout(() => {
+            discountToast.style.display = 'none';
+        }, 5000); // disappears after 5 seconds
+    }, 5000); // appears after 5 seconds
+
 
     // Function to hide modal
     function hideModal() {
@@ -122,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Show modal after 10 seconds
-    setTimeout(showModal, 20000);
+    // setTimeout(showModal, 50000);
 
     // Close modal when X is clicked
     modalClose.addEventListener('click', hideModal);
@@ -436,20 +455,20 @@ if ('loading' in HTMLImageElement.prototype) {
 // END OF SCRIPT
 // ============================================
 
-  document.addEventListener("contextmenu", e => e.preventDefault());
+document.addEventListener("contextmenu", e => e.preventDefault());
 
-  document.addEventListener("keydown", e => {
+document.addEventListener("keydown", e => {
     if (
-    e.ctrlKey &&
-    (e.key === "u" ||
-    e.key === "U" ||
-    e.key === "c" ||
-    e.key === "C" ||
-    e.key === "s" ||
-    e.key === "S" ||
-    e.key === "i" ||
-    e.key === "I")
+        e.ctrlKey &&
+        (e.key === "u" ||
+            e.key === "U" ||
+            e.key === "c" ||
+            e.key === "C" ||
+            e.key === "s" ||
+            e.key === "S" ||
+            e.key === "i" ||
+            e.key === "I")
     ) {
         e.preventDefault();
     }
-  });
+});

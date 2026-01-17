@@ -113,7 +113,7 @@ body {
            ============================================ */
 .whatsapp-float {
   position: fixed;
-  bottom: 20px;
+  bottom: 40px;
   right: 20px;
   background: linear-gradient(135deg, #25d366, #128c7e);
   color: var(--white);
@@ -672,9 +672,9 @@ body {
 }
 
 /* image wrapper */
-.bottle-mockup {
+/* .bottle-mockup {
   width: 280px;
-}
+} */
 
 /* image */
 .bottle-mockup img {
@@ -1817,4 +1817,105 @@ body {
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
+}
+/* ================================
+   STICKY FOOTER CTA
+================================ */
+
+.sticky-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #1f9d55;
+  /* padding: 0.9rem 1rem; */
+  text-align: center;
+  z-index: 999;
+  box-shadow: 0 -6px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* Prevent page overlap */
+body {
+  padding-bottom: 80px;
+}
+
+/* ================================
+   CTA BUTTON
+================================ */
+
+.discount-btn {
+  background: #ffffff;
+  color: #1f9d55;
+  border: none;
+  padding: 0.75rem 1.8rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 999px;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: pulseGlow 2.2s infinite;
+}
+
+.discount-btn:hover {
+  transform: translateY(-1px);
+}
+
+/* ================================
+   PULSE + GLOW EFFECT
+================================ */
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+/* ================================
+   MOBILE TWEAKS
+================================ */
+
+@media (max-width: 480px) {
+  .discount-btn {
+    font-size: 0.9rem;
+    padding: 0.65rem 1.4rem;
+  }
+}
+#discountModal {
+  display: none;
+}
+
+#discountModal.active {
+  display: flex;
+}
+.sticky-footer {
+  z-index: 9999;
+}
+
+#discountModal {
+  z-index: 10000;
+}
+.discount-toast {
+  position: fixed;
+  top: 65px; /* below your visitor counter bar */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1f9d55;
+  color: #fff;
+  padding: 0.8rem 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  display: none;
+  z-index: 9999;
+  max-width: 1200px; /* wider */
+  width: 90%; /* responsive */
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
