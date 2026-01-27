@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // ============================================
     const visitorCountElement = document.getElementById('visitorCount');
 
-    // Function to update visitor count with random fluctuation
+    // Function to update visitor count with random fluctuation 
     function updateVisitorCount() {
         // Random number between 35 and 65
         const count = Math.floor(Math.random() * (65 - 35 + 1)) + 35;
