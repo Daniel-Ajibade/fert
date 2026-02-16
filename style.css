@@ -1528,9 +1528,9 @@ img {
   }
 }
 
-.animate-on-scroll {
+/* .animate-on-scroll {
   will-change: transform, opacity;
-}
+} */
 
 /* ============================================
            PRINT STYLES
